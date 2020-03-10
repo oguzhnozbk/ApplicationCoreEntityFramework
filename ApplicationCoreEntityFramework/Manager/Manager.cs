@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace ApplicationCoreEntityFramework.Manager
 {
-    class Manager<T> : IDisposable where T : class, IEntityBaseForDb, new()
+    public class Manager<T> : IDisposable where T : class, IEntityBaseForDb, new()
     {
         private Repository.Repository<T> _repository;
         private UnitOfWork.UnitOfWork _unitOfWork;
