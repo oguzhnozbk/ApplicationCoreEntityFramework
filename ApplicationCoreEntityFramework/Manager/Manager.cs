@@ -65,6 +65,10 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Verilen Entity için Query döndürür.
+        /// </summary>
+        /// <returns></returns>
         public virtual IQueryable<T> GetQueryable()
         {
             try
@@ -76,6 +80,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Verilen Entity için Predicate ile belirtilen koşulu karşılayan öğeleri içeren Query döndürür.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public virtual IQueryable<T> GetQueryable(Expression<Func<T, bool>> predicate)
         {
             try
@@ -88,6 +97,10 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Verilen Entity için Liste döndürür.
+        /// </summary>
+        /// <returns></returns>
         public virtual List<T> GetList()
         {
             try
@@ -99,6 +112,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw e;
             }
         }
+        /// <summary>
+        /// Verilen Entity için Predicate ile belirtilen koşulu karşılayan öğreleri içeren List döndürür.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public virtual List<T> GetList(Expression<Func<T, bool>> predicate)
         {
             try
@@ -111,6 +129,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        ///  Belirtilen Primary Key değeri için Entity döndürür. Primary Key'e bağlı Entity bulamazsa ve id değeri geçersizse null değer döndürür.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public virtual T Find(int? id)
         {
             try
@@ -122,6 +145,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw e;
             }
         }
+        /// <summary>
+        /// Verilen Entity için Predicate ile belirtilen koşulu karşılayan öğeyi döndürür.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public virtual T Find(Expression<Func<T, bool>> predicate)
         {
             try
@@ -134,6 +162,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Gönderilen Entityi veritabanına ekler. Eğer save parametresi false olarak gönderilirse bu işlemden sonra verinin veritabanına eklenebilmesi için Save() yapılması gerekir.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="save"></param>
         public virtual void Add(T entity, bool save = true)
         {
             try
@@ -148,6 +181,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Gönderilen Entityi veritabanında günceller. Eğer save parametresi false olarak gönderilirse bu işlemden sonra verinin veritabanında güncellenebilmesi için Save() yapılması gerekir.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="save"></param>
         public virtual void Update(T entity, bool save = true)
         {
             try
@@ -162,6 +200,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Gönderilen Entityi veritabanından siler. Eğer save parametresi false olarak gönderilirse bu işlemden sonra verinin veritabanından silinebilmesi için Save() yapılması gerekir.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="save"></param>
         public virtual void Delete(T entity, bool save = true)
         {
             try
@@ -175,6 +218,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw e;
             }
         }
+        /// <summary>
+        /// Gönderilen Primary Key değerine sahip Entityi veritabanından siler. Eğer save parametresi false olarak gönderilirse bu işlemden sonra verinin veritabanından silinebilmesi için Save() yapılması gerekir.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="save"></param>
         public virtual void Delete(int id, bool save = true)
         {
             try
@@ -189,6 +237,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Predicate koşuluna uyan bir veri olup olmadığını kontrol eder. eğer veri varsa true döndürür.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public virtual bool Exists(Expression<Func<T, bool>> predicate)
         {
             try
@@ -201,6 +254,10 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Dizideki öğelerin sayısını döndürür.
+        /// </summary>
+        /// <returns></returns>
         public virtual int Count()
         {
             try
@@ -213,6 +270,11 @@ namespace ApplicationCoreEntityFramework.Manager
                 throw exc;
             }
         }
+        /// <summary>
+        /// Dizideki verilen Predicate koşulunu sağlayan öğelerin sayısını döndürür.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public virtual int Count(Expression<Func<T, bool>> predicate)
         {
             try
